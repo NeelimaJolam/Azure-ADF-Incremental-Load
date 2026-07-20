@@ -1,0 +1,81 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "retailmigration"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"LS_LUKP_Parentpl_password": {
+			"value": ""
+		},
+		"LS_ONPREM_SQLSERVER_DW_password": {
+			"value": ""
+		},
+		"LS_ParentSQL_Server_DW_password": {
+			"value": ""
+		},
+		"LS_SQLSERVER_LKUP_password": {
+			"value": ""
+		},
+		"SqlServer_LKUP_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsclouddevproject.dfs.core.windows.net/"
+		},
+		"LS_LUKP_Parentpl_properties_typeProperties_server": {
+			"value": "NEELIMAJOLAM\\SQLEXPRESS"
+		},
+		"LS_LUKP_Parentpl_properties_typeProperties_database": {
+			"value": "MigrationProject"
+		},
+		"LS_LUKP_Parentpl_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_ONPREM_SQLSERVER_DW_properties_typeProperties_server": {
+			"value": "NEELIMAJOLAM\\SQLEXPRESS"
+		},
+		"LS_ONPREM_SQLSERVER_DW_properties_typeProperties_database": {
+			"value": "MigrationProject"
+		},
+		"LS_ONPREM_SQLSERVER_DW_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_ParentSQL_Server_DW_properties_typeProperties_server": {
+			"value": "NEELIMAJOLAM\\SQLEXPRESS"
+		},
+		"LS_ParentSQL_Server_DW_properties_typeProperties_database": {
+			"value": "MigrationProject"
+		},
+		"LS_ParentSQL_Server_DW_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_SQLSERVER_LKUP_properties_typeProperties_server": {
+			"value": "NEELIMAJOLAM\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_LKUP_properties_typeProperties_database": {
+			"value": "MigrationProject"
+		},
+		"LS_SQLSERVER_LKUP_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"SqlServer_LKUP_properties_typeProperties_server": {
+			"value": "NEELIMAJOLAM\\SQLEXPRESS"
+		},
+		"SqlServer_LKUP_properties_typeProperties_database": {
+			"value": "MigrationProject"
+		},
+		"SqlServer_LKUP_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

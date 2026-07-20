@@ -1,0 +1,196 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "retailmigration"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"LS_LUKP_Parentpl_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_LUKP_Parentpl'"
+		},
+		"LS_ONPREM_SQLSERVER_DW_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_ONPREM_SQLSERVER_DW'"
+		},
+		"LS_ParentSQL_Server_DW_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_ParentSQL_Server_DW'"
+		},
+		"LS_SQLSERVER_LKUP_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQLSERVER_LKUP'"
+		},
+		"SqlServer_LKUP_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer_LKUP'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsclouddevproject.dfs.core.windows.net/"
+		},
+		"LS_LUKP_Parentpl_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "NEELIMAJOLAM\\SQLEXPRESS"
+		},
+		"LS_LUKP_Parentpl_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "MigrationProject"
+		},
+		"LS_LUKP_Parentpl_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_ONPREM_SQLSERVER_DW_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "NEELIMAJOLAM\\SQLEXPRESS"
+		},
+		"LS_ONPREM_SQLSERVER_DW_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "MigrationProject"
+		},
+		"LS_ONPREM_SQLSERVER_DW_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_ParentSQL_Server_DW_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "NEELIMAJOLAM\\SQLEXPRESS"
+		},
+		"LS_ParentSQL_Server_DW_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "MigrationProject"
+		},
+		"LS_ParentSQL_Server_DW_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_SQLSERVER_LKUP_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "NEELIMAJOLAM\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_LKUP_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "MigrationProject"
+		},
+		"LS_SQLSERVER_LKUP_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"SqlServer_LKUP_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "NEELIMAJOLAM\\SQLEXPRESS"
+		},
+		"SqlServer_LKUP_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "MigrationProject"
+		},
+		"SqlServer_LKUP_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "RetailMigration_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"LS_LUKP_Parentpl_password": {
+						"value": "[parameters('LS_LUKP_Parentpl_password')]"
+					},
+					"LS_ONPREM_SQLSERVER_DW_password": {
+						"value": "[parameters('LS_ONPREM_SQLSERVER_DW_password')]"
+					},
+					"LS_ParentSQL_Server_DW_password": {
+						"value": "[parameters('LS_ParentSQL_Server_DW_password')]"
+					},
+					"LS_SQLSERVER_LKUP_password": {
+						"value": "[parameters('LS_SQLSERVER_LKUP_password')]"
+					},
+					"SqlServer_LKUP_password": {
+						"value": "[parameters('SqlServer_LKUP_password')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"LS_LUKP_Parentpl_properties_typeProperties_server": {
+						"value": "[parameters('LS_LUKP_Parentpl_properties_typeProperties_server')]"
+					},
+					"LS_LUKP_Parentpl_properties_typeProperties_database": {
+						"value": "[parameters('LS_LUKP_Parentpl_properties_typeProperties_database')]"
+					},
+					"LS_LUKP_Parentpl_properties_typeProperties_userName": {
+						"value": "[parameters('LS_LUKP_Parentpl_properties_typeProperties_userName')]"
+					},
+					"LS_ONPREM_SQLSERVER_DW_properties_typeProperties_server": {
+						"value": "[parameters('LS_ONPREM_SQLSERVER_DW_properties_typeProperties_server')]"
+					},
+					"LS_ONPREM_SQLSERVER_DW_properties_typeProperties_database": {
+						"value": "[parameters('LS_ONPREM_SQLSERVER_DW_properties_typeProperties_database')]"
+					},
+					"LS_ONPREM_SQLSERVER_DW_properties_typeProperties_userName": {
+						"value": "[parameters('LS_ONPREM_SQLSERVER_DW_properties_typeProperties_userName')]"
+					},
+					"LS_ParentSQL_Server_DW_properties_typeProperties_server": {
+						"value": "[parameters('LS_ParentSQL_Server_DW_properties_typeProperties_server')]"
+					},
+					"LS_ParentSQL_Server_DW_properties_typeProperties_database": {
+						"value": "[parameters('LS_ParentSQL_Server_DW_properties_typeProperties_database')]"
+					},
+					"LS_ParentSQL_Server_DW_properties_typeProperties_userName": {
+						"value": "[parameters('LS_ParentSQL_Server_DW_properties_typeProperties_userName')]"
+					},
+					"LS_SQLSERVER_LKUP_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQLSERVER_LKUP_properties_typeProperties_server')]"
+					},
+					"LS_SQLSERVER_LKUP_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQLSERVER_LKUP_properties_typeProperties_database')]"
+					},
+					"LS_SQLSERVER_LKUP_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQLSERVER_LKUP_properties_typeProperties_userName')]"
+					},
+					"SqlServer_LKUP_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer_LKUP_properties_typeProperties_server')]"
+					},
+					"SqlServer_LKUP_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer_LKUP_properties_typeProperties_database')]"
+					},
+					"SqlServer_LKUP_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer_LKUP_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
