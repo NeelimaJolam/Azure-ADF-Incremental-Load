@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "LKUP_MAXVALUE",
+				"description": "ADF Activity",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
