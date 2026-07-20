@@ -59,6 +59,7 @@
 			},
 			{
 				"name": "LKUP_SQLTABLE_WATERMARK DW",
+				"description": "",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
