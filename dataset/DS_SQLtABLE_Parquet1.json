@@ -1,0 +1,110 @@
+{
+	"name": "DS_SQLtABLE_Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Table_Name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(dataset().Table_Name,'_',formatDateTime(utcNow(),'yyyyMMddHHmmss'),'.parquet')",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat(     'SELECT * FROM ',     pipeline().parameters.TableSchema, '.', pipeline().parameters.TableName,     if(         equals(pipeline().parameters.LastLoadValue, null),         '',          concat(             ' WHERE ', pipeline().parameters.WatermarkColumn,             ' > ''', pipeline().parameters.LastLoadValue, ''''         )     ) )",
+					"type": "Expression"
+				},
+				"fileSystem": "output"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "id",
+				"type": "INT64"
+			},
+			{
+				"name": "sku",
+				"type": "UTF8"
+			},
+			{
+				"name": "tp1",
+				"type": "UTF8"
+			},
+			{
+				"name": "tp2",
+				"type": "UTF8"
+			},
+			{
+				"name": "index",
+				"type": "UTF8"
+			},
+			{
+				"name": "weight",
+				"type": "UTF8"
+			},
+			{
+				"name": "catalog",
+				"type": "UTF8"
+			},
+			{
+				"name": "mrpold",
+				"type": "UTF8"
+			},
+			{
+				"name": "ajiomrp",
+				"type": "UTF8"
+			},
+			{
+				"name": "category",
+				"type": "UTF8"
+			},
+			{
+				"name": "styleId",
+				"type": "UTF8"
+			},
+			{
+				"name": "paytmmrp",
+				"type": "UTF8"
+			},
+			{
+				"name": "amazonmrp",
+				"type": "UTF8"
+			},
+			{
+				"name": "myntramrp",
+				"type": "UTF8"
+			},
+			{
+				"name": "flipkartmrp",
+				"type": "UTF8"
+			},
+			{
+				"name": "limeroadmrp",
+				"type": "UTF8"
+			},
+			{
+				"name": "snapdealmrp",
+				"type": "UTF8"
+			},
+			{
+				"name": "finalmrpold",
+				"type": "UTF8"
+			},
+			{
+				"name": "amazonfbamrp",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

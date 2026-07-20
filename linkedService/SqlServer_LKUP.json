@@ -1,0 +1,21 @@
+{
+	"name": "SqlServer_LKUP",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "NEELIMAJOLAM\\SQLEXPRESS",
+			"database": "MigrationProject",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkZmE5NjExNy0yMzAxLTRmMzQtYThjNi03MDVjZDU4YTQwOGQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "RetailMigrationSQL",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

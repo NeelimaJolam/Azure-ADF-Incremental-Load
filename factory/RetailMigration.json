@@ -1,0 +1,15 @@
+{
+	"name": "RetailMigration",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c610e755-8b80-46eb-9349-e2c1d3c50ee5",
+		"tenantId": "5ab3a206-8862-4042-af6a-05262e60a5f1"
+	}
+}

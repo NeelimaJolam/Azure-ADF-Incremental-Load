@@ -1,0 +1,21 @@
+{
+	"name": "LS_ParentSQL_Server_DW",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "NEELIMAJOLAM\\SQLEXPRESS",
+			"database": "MigrationProject",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5NThlMDlkNy02YjFlLTQ5YjgtODg3MC1hMWIwZWU5YWMwM2EiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "RetailMigrationSQL",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"name": "RetailMigrationSQL",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
